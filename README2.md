@@ -117,6 +117,7 @@ void Start(){
 ```
 
 Итоговый результат:
+![Lab_2-SampleScene-Windows_-Mac_-Linux-Unity-2021 3 11f1-Personal-_DX11_-2022-10-15-17-29-39_Trim](https://user-images.githubusercontent.com/85516001/195998828-35881dff-8337-4706-8b98-1b71640b5173.gif)
 
 
 
