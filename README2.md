@@ -50,64 +50,64 @@ Cоздание интерактивного приложения и изуче�
 6. Создала игровой скрипт для перемещения дракона
 
 ```py
- public class EnemyDragon : MonoBehaviour
-{
+ public class EnemyDragon : MonoBehaviour{
+ 
  public GameObject dragonEggPrefab;
-
  public float speed = 1;
  public float timeBetweenEggDrops = 1f;
  public float leftRightDistance = 10f;
  public float chanceDirection = 0.1f;
 
-void Update()
- {
-Vector3 pos = transform.position;
-pos.x += speed * Time.deltaTime;
-transform.position = pos;
+void Update(){
 
-if (pos.x < -leftRightDistance){
-    speed = Mathf.Abs(speed);
-  } 
-else if (pos.x > leftRightDistance){
-    speed = -Mathf.Abs(speed);
-  }
+  Vector3 pos = transform.position;
+  pos.x += speed * Time.deltaTime;
+  transform.position = pos;
+
+  if (pos.x < -leftRightDistance){
+      speed = Mathf.Abs(speed);
+    } 
+  else if (pos.x > leftRightDistance){
+      speed = -Mathf.Abs(speed);
+    }
 }
 
 private void FixedUpdate() {
- if (Random.value < chanceDirection){
-    speed *= -1;
-  }
- }
+  if (Random.value < chanceDirection){
+     speed *= -1;
+   }
 }
+
 ```
 ![Lab_2-SampleScene-Windows_-Mac_-Linux-Unity-2021 3 11f1-Personal_-_DX11_-2022-10-15-16-48-56_Trim](https://user-images.githubusercontent.com/85516001/195998188-8b2a6cc9-567d-419e-9acf-6af387b55e47.gif)
 
 7. Написала функцию DropEgg, скачала asset Fire & Spell для визуального оформления.
 ```py
-void Start()
-  {
+void Start(){
    Invoke("DropEgg", 2f);
-  }
- void DropEgg(){
+}
+  
+void DropEgg(){
   Vector3 myVector = new Vector3(0.0f, 5.0f, 0.0f);
   GameObject egg = Instantiate<GameObject>(dragonEggPrefab);
   egg.transform.position = transform.position + myVector;
   Invoke("DropEgg", timeBetweenEggDrops);
-  }
+}
  ```
 ![image](https://user-images.githubusercontent.com/85516001/195998280-8676a530-95a7-4ed9-88b3-1d83a1ae180c.png)
 
 
 8. Написала скрипт для генерации EnergyShield:
 ```py
-public class DragonPicker : MonoBehaviour
- {
+public class DragonPicker : MonoBehaviour{
+
   public GameObject energyShieldprefab;
   public int numEnergyShield = 3;
   public float energyShieldBottomY = -6f;
   public float energyShieldRadius = -1.5f;
-void Start()
-{
+  
+void Start(){
+
  for (int i = 1; i < numEnergyShield; i++){
     GameObject tShieldGo = Instantiate<GameObject>(energyShieldprefab);
     tShieldGo.transform.position = new Vector3(0, energyShieldBottomY, 0);
