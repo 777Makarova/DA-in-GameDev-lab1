@@ -61,19 +61,17 @@ public class EnergyShield : MonoBehaviour
 ![Lab_2 - SampleScene - WebGL - Unity 2021 3 11f1 Personal _DX11_ 2022-10-19 14-28-07_Trim](https://user-images.githubusercontent.com/85516001/196681678-8748a98c-7a77-4248-9ba6-b0347b518b48.gif)
 
 
-2. Добаление метода OnCollisionEnter, позволюящего реализовать ловлю объектов Dragon Eggs:
+2. Добавление метода OnCollisionEnter, позволюящего реализовать ловлю объектов Dragon Eggs и Canvas:
 ```py
  private void OnCollisionEnter(Collision coll) {
         GameObject Collided = coll.gameObject;
         if (Collided.tag == "Dragon Egg"){
             Destroy(Collided);
         }
-        int score = int.Parse(scoreGT.text);
-        score += 1;
-        scoreGT.text = score.ToString();
     }
 ```
-добавлениеэлемента графического интерфейса, создаем Canvas
+![Lab_2 - SampleScene - WebGL - Unity 2021 3 11f1 Personal_ _DX11_ 2022-10-19 14-40-18_Trim](https://user-images.githubusercontent.com/85516001/196682113-f0dcbbb9-3324-45f2-a6ab-76cf2692db23.gif)
+
 
 
 3. Создала новый проект из шаблона 3D-Core.
